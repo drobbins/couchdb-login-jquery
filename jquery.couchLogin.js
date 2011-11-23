@@ -24,7 +24,7 @@
                         elem.empty();
                         elem.append(loggedIn(r));
                         if (opts.loggedIn) {opts.loggedIn(userCtx)}
-                    } else if (userCtx.roles.indexOf("_admin") != -1) {
+                    } else if (!$.isEmptyObject(userCtx.roles) && userCtx.roles.indexOf("_admin") != -1) {
                         elem.html(templates.adminParty);
                     } else {
                         elem.html(templates.loggedOut);
